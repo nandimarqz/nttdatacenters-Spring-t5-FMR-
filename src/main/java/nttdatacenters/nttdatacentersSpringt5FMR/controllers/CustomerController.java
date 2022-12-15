@@ -90,5 +90,25 @@ public class CustomerController {
 
 		return c;
 	}
+	
+	/**
+	 * Borra el cliente con el id que recibe por parametros
+	 * 
+	 * @param id
+	 * @return redirige al metodo de la vista de los clientes 
+	 */
+	@PostMapping("deleteCustomer")
+	public void deleteCustomer(@RequestParam String id) {
+		
+		if(id != "" && id != null) {
+			
+			cms.deleteCustomerById(Long.valueOf(id));
+			
+		}
+		
+	
+		
+	}
+	
 
 }
